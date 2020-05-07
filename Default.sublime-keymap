@@ -1,7 +1,18 @@
 [
-	{ "keys": ["#"], "command": "insert_snippet", "args": {"contents": "#{${0:$SELECTION}}"}, "context":
+	{ "keys": ["#"], "command": "insert_snippet", "args": {"contents": "#"}, "context":
 		[
 			{ "key": "setting.auto_match_enabled", "operator": "equal", "operand": true },
+			{
+				"operand": "(string.quoted.double.ruby | string.interpolated.ruby) - string source",
+				"operator": "equal",
+				"match_all": true,
+				"key": "selector"
+			}
+		]
+	},
+	{ "keys": ["#"], "command": "insert_snippet", "args": {"contents": "#{${0:$SELECTION}}"}, "context":
+		[
+			{ "key": "setting.auto_match_enabled_selection", "operator": "equal", "operand": true },
 			{
 				"operand": "(string.quoted.double.ruby | string.interpolated.ruby) - string source",
 				"operator": "equal",
